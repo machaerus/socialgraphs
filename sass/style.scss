@@ -1,0 +1,197 @@
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+@import "variables";
+@import "mixins";
+@import "path";
+@import "core";
+@import "larger";
+@import "fixed-width";
+@import "list";
+@import "bordered-pulled";
+@import "animated";
+@import "rotated-flipped";
+@import "stacked";
+@import "icons";
+@import "screen-reader";
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Fredoka+One|Montserrat:400,500,700|Open+Sans:400,400i,600,700|Raleway:400,600,700');
+
+$col1: #5B1646;
+$col2: #96043E;
+$col3: #CA0035;
+$col4: #FF5728;
+$col5: #FFC400;
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #eee;
+	color: #666;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.top-bar {
+	width: 100%;
+	height: 250px;
+	background: #eee;
+	margin: 0;
+	padding: 50px 0;
+	background-image: url("img/wallhaven-77673.jpg");
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+
+	.overlay {
+		background: $col2;
+		opacity: 0.5;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 0;
+	}
+
+	header {
+		border: 4px solid white;
+		padding: 30px 60px;
+		position: relative;
+		margin: auto auto;
+		z-index: 10000;
+		text-align: center;
+		width: 650px;
+	}
+
+	h1 {
+		font-size: 36px;
+		font-family: Montserrat, sans-serif;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: white;
+		width: 100%;
+		margin: 0;
+	}
+
+	h2 {
+		font-size: 24px;
+		font-family: Open Sans, sans-serif;
+		font-weight: normal;
+		color: white;
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	min-height: auto;
+	margin: 0;
+}
+
+.content {
+	width: 1100px;
+	min-height: 500px;
+	margin: 0 auto;
+	padding: 0 0 50px;
+	background: #fff;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	display: flex;
+	flex-flow: row wrap;
+
+}
+
+#sidebar {
+	flex: none;
+	min-width: 250px;
+	// margin-right: 50px;
+	padding: 0 20px;
+	background: #e7e7e7;
+	border-right: 1px solid #ccc;
+
+	#sidebar-nav {
+		ul {
+			padding: 0;
+			margin: 30px 20px;
+			
+			li {
+				margin: 0;
+				padding: 0;
+
+				list-style: none;
+				font-family: Open Sans, sans-serif;
+				text-transform: uppercase;
+				font-size: 13px;
+				line-height: 36px;
+				border-bottom: 1px solid #ccc;
+
+				.fa {
+					padding-right: 10px;
+					color: $col3;
+				}
+		
+				a {
+					text-decoration: none;
+					color: $col4;
+					&:hover {
+						color: $col3;
+					}
+				}
+			}
+		}	
+	}
+
+
+}
+
+#main {
+
+	flex: 1;
+	background: #fff;
+
+	section {
+		min-height: 300px;
+		padding: 20px 50px 40px;
+		outline: none;
+	}
+
+	h1 {
+		font-family: Montserrat, sans-serif;
+		font-weight: 400;
+		// color: #5B1646;
+		color: $col2;
+		text-transform: uppercase;
+		font-size: 32px;
+		border-bottom: 1px solid #eee;
+		padding: 0 0 10px;
+		margin: 10px 0 15px;
+	}
+
+	h2 {
+		font-family: Montserrat, sans-serif;
+		font-weight: 400;
+		color: $col4;
+		font-size: 26px;
+	}
+
+	p {
+		font-family: Open Sans, sans-serif;
+		font-color: #999;
+	}
+
+
+}
+
