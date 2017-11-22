@@ -63,19 +63,29 @@
 						</section>
 						<section id="network">
 							
-							<h1>Network analysis</h1>
+							<h1>Network Analysis</h1>
 
-							<p>The downloaded network can be visualized in different ways like seen below...</p>
-							<div class="wrapper">
-  								<div class="box">
-    									<img src="img/basic_network.png" alt="",width="50%" height="50%">
-  								</div>
-							</div>
+							<p>The downloaded network can be visualized in different ways like seen below... (This should be rescaled to look nice @Jan)</p>
+							<img src="img/basic_network.png" alt="",width="50%" height="50%">
+							<img src="img/categorized_network.png" alt="",width="50%" height="50%">
+							<img src="img/grouped_network.png" alt="",width="50%" height="50%">
 							
-							<h2>Subsection title</h2>
+							<h2>Basic Statistics</h2>
 
-							<p>Blablabla</p>
-
+							<p>The network consists of 1078 nodes, i.e. characters and include 5211 edges, i.e. connections. As seen from the pictures above we categorize each character into different categories which are; Gyffindors, Ravenclaws, Slytherins, Hufflepuffs, Muggles and Other Wizards,
+							where the latter is a fairly large group of characters. These "communities" are what we will refer to as node attributes and further analysis of these communities will be carried out later.
+							A fast an easy to calculate statistic is the degree distribution, which is basically found by counting the number of connections each node in the network has and then binning the degrees such that a distribution can be visualized. 
+							Although first, let us just check the top nodes with respect to degree in the network as seen below.</p>
+							<p> Top 10 nodes sorted by degree </p>
+							<img src="img/degree_table.png" alt="",width="50%" height="50%">
+							
+							<p> Furthermore, in network analysis formally a connection can be categorized into either an in- or out-connection which is refered to as the in- and out-degree of a node. This exists as the graphs created are a type of graph refeered to as a directed graph meaning that the links between characters are directed, i.e. one character might link to another but the other character might not link to the first.
+							Hence, by splitting the counts of degrees into in- and out-degrees the following two tables can be made: </p>
+							<p> Top 10 nodes sorted by in-degree </p>
+							<img src="img/in_degree_table.png" alt="",width="50%" height="50%">
+							<p> Top 10 nodes sorted by out-degree </p>
+							<img src="img/out_degree_table.png" alt="",width="50%" height="50%">
+							
 							<h2>Another subsection</h2>
 
 							<p>Text text</p>
