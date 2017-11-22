@@ -66,9 +66,17 @@
 							<h1>Network analysis</h1>
 
 							<p>The downloaded network can be visualized in different ways like seen below...</p>
-							<div class="img-wrap">
-								<img src="img/basic_network.png">
+							<div class="wrapper">
+  								<div class="box">
+    									<img src="img/basic_network.png" alt="">
+  								</div>
 							</div>
+
+							.wrapper { position:relative; overflow:hidden; }
+
+							.box { float:left; } //Note: 'float:right' would work too
+
+							.box > img { width:50%; }
 							
 							<h2>Subsection title</h2>
 
