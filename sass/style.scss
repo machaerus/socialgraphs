@@ -19,6 +19,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Fredoka+One|Montserrat:400,500,700|Open+Sans:400,400i,600,700|Raleway:400,600,700');
 
+// https://color.adobe.com/Ekran-Resmi-2017-10-20-02-color-theme-10149027/edit/?copy=true&base=2&rule=Custom&selected=4&name=Copy%20of%20Ekran%20Resmi%202017-10-20%2002&mode=rgb&rgbvalues=0.3568627450980392,0.08627450980392157,0.27450980392156865,0.5882352941176471,0.01568627450980392,0.24313725490196078,0.792156862745098,0,0.20784313725490197,1,0.3411764705882353,0.1568627450980392,1,0.7686274509803922,0&swatchOrder=0,1,2,3,4
+
 $col1: #5B1646;
 $col2: #96043E;
 $col3: #CA0035;
@@ -44,10 +46,10 @@ body {
 
 .top-bar {
 	width: 100%;
-	height: 250px;
+	height: 350px;
 	background: #eee;
 	margin: 0;
-	padding: 50px 0;
+	padding: 100px 0;
 	background-image: url("img/wallhaven-77673.jpg");
 	background-position: center center;
 	background-size: cover;
@@ -105,7 +107,7 @@ body {
 	width: 1100px;
 	min-height: 500px;
 	margin: 0 auto;
-	padding: 0 0 50px;
+	padding: 0;
 	background: #fff;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
@@ -116,7 +118,7 @@ body {
 
 #sidebar {
 	flex: none;
-	min-width: 250px;
+	width: 250px;
 	// margin-right: 50px;
 	padding: 0 20px;
 	background: #e7e7e7;
@@ -166,32 +168,79 @@ body {
 		min-height: 300px;
 		padding: 20px 50px 40px;
 		outline: none;
-	}
+		
+		img {
+			max-width: 100%;
+		}
 
-	h1 {
-		font-family: Montserrat, sans-serif;
-		font-weight: 400;
-		// color: #5B1646;
-		color: $col2;
-		text-transform: uppercase;
-		font-size: 32px;
-		border-bottom: 1px solid #eee;
-		padding: 0 0 10px;
-		margin: 10px 0 15px;
-	}
+		h1 {
+			font-family: Montserrat, sans-serif;
+			font-weight: 400;
+			// color: #5B1646;
+			color: $col2;
+			text-transform: uppercase;
+			font-size: 32px;
+			border-bottom: 1px solid #eee;
+			padding: 0 0 10px;
+			margin: 10px 0 15px;
+		}
 
-	h2 {
-		font-family: Montserrat, sans-serif;
-		font-weight: 400;
-		color: $col4;
-		font-size: 26px;
-	}
+		h2 {
+			font-family: Montserrat, sans-serif;
+			font-weight: 400;
+			color: $col4;
+			font-size: 26px;
+		}
+
+		p {
+			font-family: Open Sans, sans-serif;
+			font-color: #999;
+
+			a {
+				text-decoration: none;
+				color: $col4;
+				// font-weight: bolder;
+				&:hover {
+					color: $col5;
+				}
+			}
+		}
+
+		figure {
+			width: 100%;
+			margin: 30px auto;
+			text-align: center;
+
+			img {
+				max-width: 90%;
+				margin: 0 auto;
+			}
+
+			figcaption {
+				font-family: Open Sans, sans-serif;
+				font-style: italic;
+				text-align: center;
+			}
+		}
+
+	}	
+
+}
+
+#colophon {
+	// flex: 1;
+	width: 100%;
+	clear: both;
+	padding: 20px;
+	background: #111;
+	text-align: center;
 
 	p {
-		font-family: Open Sans, sans-serif;
-		font-color: #999;
+		font-family: Montserrat, sans-serif;
+		color: white;
+		font-size: 13px;
 	}
-
+	
 
 }
 
