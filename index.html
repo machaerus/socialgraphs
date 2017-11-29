@@ -145,7 +145,7 @@
 										
 								<figure>
 									<img src="img/confusion_matrix.PNG">
-									<figcaption>Visualization of the 20 partitions found by the Louvain algorithm using the original coloring scheme which was based on the 6 categories or the 'ground truth'.</figcaption>
+									<figcaption>The confusion matrix created by comparing the original six communities with the 20 communities which was found by the Louvain algorithm.</figcaption>
 								</figure>
 								
 								<p>Taking a look at the confusion matrix, it seems that partition number 7 mostly includes muggles and hence it will be of interest to analyze that specific community. Below we print the list of characters belonging to community number 7. For a person with domain knowledge of the Harry Potter universe it is easily seen why this community is created. The community mostly consist of the Dursleys which is the family which took care of Harry Potter when he was a child and furthermore it consists of Harry's parents and some of their acquitances. Harry's mother was related to Petunia Dursley and hence it is expected that the they are categorized into this community.</p>
@@ -154,14 +154,21 @@
 									<img src="img/partition_7.PNG">
 									<figcaption>Characters included in the seventh partition created by the Louvain algorithm.</figcaption>
 								</figure>
+
 						</section>
 						<section id="text">
 							
-							<h1>Text analysis</h1>
+							<h1>Natural language processing and text mining</h1>
 
-							<p>Blablablabla</p>
+							<p>Now, we dwelve into some natural language processing of all the text provided from the Wikipedia sites, the books and the movie scripts. The links to the books and movie scripts are found in the IPython notebook. An immediate interest of is to analyze what words are unique to the most important characters in the network. This can be done by using the term-frequency and inverse document frequency scoring scheme which will be refereed to as the TF-IDF score. This scoring scheme is based on an analysis of a corpus of documents (collection of texts) where first the frequency of a word within a document is found and then the frequency of that word across the corpus of documents is found. In layman terms the TF-IDF score can be understood by considering the limits of the score; if a word is found with a high frequency in a single document and only exist in that document across the corpus of documents, then it attains a maximum TF-IDF score. If another word appears with a high frequency in a document but is present in all other documents of the corpus then it attains a TF-IDF score of zero as the word is not a unique identifier of that specific document. </p>
 
-							<h2>Subsection title</h2>
+							<p>By computing the TF-IDF scores the results can be visualized in so called WordClouds where words with a high TF-IDF score is highlighted. We intend to analyze three different corpus of documents in the following sections; Wikipedia texts from the nine most important characters, the seven different books and the eight different movies and from this find the words with the highest TF-IDF score. </p>
+
+							<h2>TF-IDF score and WordClouds</h2>
+								<h3>Analyzing the top nine characters Wikipedia page </h3>
+								We extract the nine most important characters based on their total node degree corresponding. These were shown in the above table of total node degree. By tokenizing and cleaning the text from the characters Wikipedia site the following WordClouds are obtained.
+
+								
 
 							<p>Blablabla</p>
 
