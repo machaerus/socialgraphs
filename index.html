@@ -39,18 +39,35 @@
 						<nav id="sidebar-nav">
 							<ul>
 								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#introduction">Introduction</a></li>
-								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#network">Network analysis</a></li>
-								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#text">Text analysis</a></li>
-								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#sentiment">Sentiment analysis</a></li>
+								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#network-analysis">Network analysis</a>
+									<ul>
+										<li><a href="#basic-statistics">Basic statistics</a></li>
+										<li><a href="#degree-distribution">Degree distribution</a></li>
+										<li><a href="#centrality">Centrality</a></li>
+										<li><a href="#community-analysis">Community analysis</a></li>
+									</ul>
+								</li>
+								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#nlp-text-mining">NLP and text mining</a>
+									<ul>
+										<li><a href="#tf-idf-wordclouds">TF-IDF and wordclouds</a>
+											<ul>
+												<li><a href="#characters">Characters</a></li>
+												<li><a href="#movies">Movies</a></li>
+												<li><a href="#books">Books</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#sentiment-analysis">Sentiment analysis</a></li>
 								<!-- <li><i class="fa-li fa fa-bolt"></i></li> -->
 							</ul>
 						</nav>
 					</div><!--/sidebar-->
 					<div id="main">
 
-						<section id="introduction">
+						<section>
 							
-							<h1>Introduction</h1>
+							<h1 id="introduction">Introduction</h1>
 
 							<p>This website was created in order to present the work done during the Final Project of the course <em>02805 Social Graphs and Interactions</em> at the Technical University of Denmark. 
 							The Final Project of the course consists of a building network from a data set chosen by the authors of this website. We choose to analyze the Harry Potter universe and all everything about it. The network was created from the text on the Harry Potter Fandom Wikipedia site <a href="http://harrypotter.wikia.com/wiki/Main_Page">here</a>. The Fandom Wikipedia provides a fully structured copy of all their current pages structured into an XML file. The XML file can be downloaded from <a href="http://s3.amazonaws.com/wikia_xml_dumps/h/ha/harrypotter_pages_current.xml.7z">here</a>.</p>
@@ -62,9 +79,9 @@
 							<p>In the project we also conduct extensive text mining and sentiment analysis of the seven books and eight movie scripts. The structure of the website is setup such that reading from the top to bottom provides a walkthrough of the different analyses performed on the network but the website contains no technical explanation of the procedures, this can be found in the <a href="insertIPythonNotebookHere">IPython Notebook</a></p>
 
 						</section>
-						<section id="network">
+						<section>
 							
-							<h1>Network Analysis</h1>
+							<h1 id="network">Network Analysis</h1>
 
 							<p>The downloaded network can be visualized in different ways like seen below. First a visualization where node size and color is based on the degree. The larger the degree of a node the darker the color and the larger the size.</p>
 							<figure>
@@ -82,7 +99,7 @@
 								<figcaption>The giant component of the network (largest fully connected subset of the network) grouped by category</figcaption>
 							</figure>
 							
-							<h2>Basic Statistics</h2>
+							<h2 id="basic-statistics">Basic Statistics</h2>
 
 							<p>Now, investigating the basic statistics of the network to get and idea of the structure. The network consists of 1078 nodes, i.e. characters and include 5211 edges, i.e. connections. As seen from the pictures above we categorize each character into different categories which are; Gyffindors, Ravenclaws, Slytherins, Hufflepuffs, Muggles and Other Wizards,
 							where the latter is a fairly large group of characters. These "communities" are what we will refer to as node attributes and further analysis of these communities will be carried out later.
@@ -105,7 +122,7 @@
 								<figcaption>Top 10 nodes sorted by out-degree</figcaption>
 							</figure>
 							
-							<h2>Degree Distribution</h2>
+							<h2 id="degree-distribution">Degree Distribution</h2>
 
 							<p>From the above analysis of the node degrees, it is possible to visualize the complete degree distribution instead of just showing the top 10 nodes by binning the number of degrees and plotting this.
 							Hence, below is the in- and out-degree distribution of the network where both linear axes and log-log axes are used to show the distribution. What is interesting about using the log-log axis is that the distributions approximately form a straight line with some slope meaning that the degree distributions follow a power law.</p>
@@ -116,7 +133,7 @@
 								<figcaption>In- and out-degree of the the network plotted on linear and log-log axes</figcaption>
 							</figure>
 							
-							<h2>Centrality</h2>
+							<h2 id=centrality>Centrality</h2>
 							<p> Centrality of nodes is a measure of how central a node is in a network. Different measures of centrality exists but here we just present two different measures; betweenness and eigenvector centrality. In layman terms the betweenness centrality is a measure of the fraction of how many of the shortest paths through the network that passes through that specific node. The shortest path between two nodes are simply defined as the path that would take you from node a to b in the shortest amount of steps. Hence a high betweenness centrality of a node usually means that the node is well connected as will be seen when computing the centrality measures. Eigenvector centrality is based on a different idea as a high node degree does not necessarily mean that the node has a high eigenvector centrality. The scoring of eigenvector centrality is basically controlled having node neighbors that also have a high eigenvector centrality and hence if one node has many links to important nodes in the network, then that node has a high eigenvector centrality.</p> 
 							
 							<p> Now, computing the two centrality measures as seen in the below tables, it is seen that there is quite some correspondance between the two tables although the relative scoring between the two is different. It is quite clear that Harry Potter is the most important character in the network, which was expected as both the degree is high and intuitively one would know that he connects and interacts with a lot of different people in the network. From the betweenness centrality it is seen that some of the nodes with a high score here is not present in the top 10 eigenvector centrality table indicating that these were not connected to important characters in the network but were merely good links for shortest paths in the network. Generally it seems that the main characters of the books and movies have a high eigenvector centrality but this is not necessarily true for the betweenness centrality.</p>
@@ -129,7 +146,8 @@
 								<figcaption>Top 10 nodes sorted by eigenvector centrality</figcaption>
 							</figure>
 							
-							<h2>Community Analysis</h2>
+							<h2 id="community-analysis">Community Analysis</h2>
+
 								<p> As mentioned the six categories which all nodes of the network was categorized into lay the foundation of some interesting community analysis. The following analysis will be made only on the giant connected component (GCC) which was visualized above. The GCC consists of 865 nodes and 3450 edges and hence includes most of the node in the network which had a total of 1078 nodes. In the analysis we make use of a measure called the modularity which gives a score to the current partioning of the network regarding how community like the partioning is. It can be thought of as a way of analyzing potential communities by comparing a potential community to the community that could be formed if randomness was introduced into the same network. If  the modularity is positive the potential community has more links than expected when comparing to a random network. When the modularity is zero then the community links are fully explained by the random variable determining the underlying links (i.e. fully explained by the link distribution which was shown to follow a power law above) and if  the modularity is negative there is less links in the community than when compared to random. Then the overall modularity is the average of the modularities of each community and hence provides a good estimate of the community structure of the partitions. </p>
 
 								<p>The calculated modularity of the current six partitions in the GCC as found to be 0.19 which is rather lower but still shows that the categories provide some community structure. If one was to exclude the whole category called 'Other wizards' and only include the four housings and muggles as categories, then probably the modularity would be higher. The details of the calculation of the modularity of the current partioning can be found in the IPython Notebook. </p>
@@ -156,18 +174,18 @@
 								</figure>
 
 						</section>
-						<section id="text">
+						<section>
 							
-							<h1>Natural language processing and text mining</h1>
+							<h1 id="nlp-text-mining">Natural language processing and text mining</h1>
 
 							<p>Now, we dwelve into some natural language processing of all the text provided from the Wikipedia sites, the books and the movie scripts. The links to the books and movie scripts are found in the IPython notebook. An immediate interest of is to analyze what words are unique to the most important characters in the network. This can be done by using the term-frequency and inverse document frequency scoring scheme which will be refereed to as the TF-IDF score. This scoring scheme is based on an analysis of a corpus of documents (collection of texts) where first the frequency of a word within a document is found and then the frequency of that word across the corpus of documents is found. In layman terms the TF-IDF score can be understood by considering the limits of the score; if a word is found with a high frequency in a single document and only exist in that document across the corpus of documents, then it attains a maximum TF-IDF score. If another word appears with a high frequency in a document but is present in all other documents of the corpus then it attains a TF-IDF score of zero as the word is not a unique identifier of that specific document. </p>
 
 							<p>By computing the TF-IDF scores the results can be visualized in so called WordClouds where words with a high TF-IDF score is highlighted. We intend to analyze three different corpus of documents in the following sections; Wikipedia texts from the nine most important characters, the seven different books and the eight different movies and from this find the words with the highest TF-IDF score. </p>
 
 
-							<h2>TF-IDF score and WordClouds</h2>
+							<h2 id="tf-idf-wordclouds">TF-IDF score and WordClouds</h2>
 
-							<h3>Analyzing the top nine characters Wikipedia page </h3>
+							<h3 id="characters">Analyzing the top nine characters Wikipedia page </h3>
 
 							<p>We extract the nine most important characters based on their total node degree corresponding. These were shown in the above table of total node degree. By tokenizing and cleaning the text from the characters Wikipedia site to create a clean corpus of texts, then the TF-IDF calculation is carried out and the following WordClouds are obtained.</p>
 
@@ -185,7 +203,13 @@
 							<p>It is clear that the text was not cleaned completely as the WordClouds consists of non-meaningful words as a consequence of HTML and LaTeX commands which was not completely removed. Although this is the case, the wordclouds still bring some meaningful information and a person with domain knowledge of the Harry Potter universe would easily identify with the scoring of the words for the individual characters. It is fascinating and enlightning how a simple procedure of counting occurences of words across a corpus of documents and then applying a mathematical scoring scheme appropriately enables one to do an analysis of such a large amount of text that actually makes sense and that even might point out the unique themes in each book.</p>
 							<h3>Analyzing the eigth movie scripts</h3>
 
+<<<<<<< Updated upstream
 							<p>Now the same procedure is used just this time analyzing the movie scripts. The goal of this analysis is to compare the WordClouds of the movie scripts to the ones created from the books in the next subsection. Hence we concatenate the two movie scripts of the 7'th and 8'th movie into one long document and then calculate a combined WordCloud for these two scripts and compare them to the 7'th book.</p>
+=======
+							<h3 id="movies">Movies</h3>
+
+							<p>Something</p>
+>>>>>>> Stashed changes
 
 							<div class="slider" id="slider-movies">
 								<div><img src="img/Movie1_wordcloud.png" title="Harry Potter and the Philosopher's Stone"></div>
@@ -197,7 +221,7 @@
 								<div><img src="img/Movie78_wordcloud.png" title="Harry Potter and the Deathly Hallows"></div>
 							</div>
 
-							<h3>Books</h3>
+							<h3 id="books">Books</h3>
 
 							<p>Now calculating the WordClouds for the books as seen below.</p>
 
@@ -218,18 +242,15 @@
 							
 
 						</section>
-						<section id="sentiment">
+						<section>
 							
-							<h1>Sentiment analysis</h1>
+							<h1 id="sentiment-analysis">Sentiment analysis</h1>
 
 							<p>athina</p>
 
-							<h2>Text Analysis</h2>
+							<h2>Subsection title</h2>
 
-							<p><figure>
-								<img src="img/hermionesboyfriend.png">
-								<figcaption>Barplot showing the relationships between the three main characters</figcaption>
-							</figure></p>
+							<p>Blablabla</p>
 
 							<h2>Another subsection</h2>
 
