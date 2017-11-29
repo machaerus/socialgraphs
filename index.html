@@ -122,8 +122,30 @@
 							</figure>
 							
 							<h2>Community Analysis</h2>
+								<p> As mentioned the six categories which all nodes of the network was categorized into lay the foundation of some interesting community analysis. The following analysis will be made only on the giant connected component (GCC) which was visualized above. The GCC consists of 865 nodes and 3450 edges and hence includes most of the node in the network which had a total of 1078 nodes. In the analysis we make use of a measure called the modularity which gives a score to the current partioning of the network regarding how community like the partioning is. It can be thought of as a way of analyzing potential communities by comparing a potential community to the community that could be formed if randomness was introduced into the same network. If  the modularity is positive the potential community has more links than expected when comparing to a random network. When the modularity is zero then the community links are fully explained by the random variable determining the underlying links (i.e. fully explained by the link distribution which was shown to follow a power law above) and if  the modularity is negative there is less links in the community than when compared to random. Then the overall modularity is the average of the modularities of each community and hence provides a good estimate of the community structure of the partitions. </p>
+
+								<p>The calculated modularity of the current six partitions in the GCC as found to be 0.19 which is rather lower but still shows that the categories provide some community structure. If one was to exclude the whole category called 'Other wizards' and only include the four housings and muggles as categories, then probably the modularity would be higher. The details of the calculation of the modularity of the current partioning can be found in the IPython Notebook. </p>
+
+								<p>It is of interest now to analyze the network with a community analysis algorithm with the goal of finding partitions between nodes such as the modularity is maximized. This can be done by using the implementation of the Louvain algorithm in Python. By using this algorithm 20 different partitions are found and a modularity of 0.48 is obtained. Hence to obtain a larger modularity he algorithm decided to use a lot more partitions than just the 6 found by categorizing as mentioned. It is of interest to visualize how these 20 new partitions compare to the 6 partitions which we term the 'ground truth'. If one of the partitions correspond well to the ground truth partition then this can be visualized from the below network plot. In this plot we plot the 20 communities evenly distributed on the perimeter of a circle and keep the coloring scheme which was based on the categories assigned to the nodes.</p>
+
+								<figure>
+									<img src="img/louvain_network.png">
+									<figcaption>Visualization of the 20 partitions found by the Louvain algorithm using the original coloring scheme which was based on the 6 categories or the 'ground truth'.</figcaption>
+								</figure>		
 							
-							
+								<p>To investigate the partitions further a so called confusion matrix can be formed. Such a matrix (or table) is constructed such that the original partitions are set as rows and the found Louvain partitions are set as columns. Then by finding intersections between the original communities and the 20 partitions found by the algorithm, it is easily seen if some of the 20 partitions resemble the original partitioning. The confusion matrix is seen below.</p>
+										
+								<figure>
+									<img src="img/confusion_matrix.PNG">
+									<figcaption>Visualization of the 20 partitions found by the Louvain algorithm using the original coloring scheme which was based on the 6 categories or the 'ground truth'.</figcaption>
+								</figure>
+								
+								<p>Taking a look at the confusion matrix, it seems that partition number 7 mostly includes muggles and hence it will be of interest to analyze that specific community. Below we print the list of characters belonging to community number 7. For a person with domain knowledge of the Harry Potter universe it is easily seen why this community is created. The community mostly consist of the Dursleys which is the family which took care of Harry Potter when he was a child and furthermore it consists of Harry's parents and some of their acquitances. Harry's mother was related to Petunia Dursley and hence it is expected that the they are categorized into this community.</p>
+												
+								<figure>
+									<img src="img/partition_7.PNG">
+									<figcaption>Characters included in the seventh partition created by the Louvain algorithm.</figcaption>
+								</figure>
 						</section>
 						<section id="text">
 							
