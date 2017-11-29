@@ -45,6 +45,11 @@ $(document).ready(function() {
 
 	// bxslider
 
-	$('.slider').bxSlider();
+	$('.slider').bxSlider({
+		mode: 'fade',
+		captions: true,
+		// slideWidth: 600
+		slideHeight: 200
+	});
 
 });
