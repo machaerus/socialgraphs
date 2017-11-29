@@ -58,15 +58,17 @@
 							
 							<h1>Network Analysis</h1>
 
-							<p>The downloaded network can be visualized in different ways like seen below.</p>
+							<p>The downloaded network can be visualized in different ways like seen below. First a visualization where node size and color is based on the degree. The larger the degree of a node the darker the color and the larger the size.</p>
 							<figure>
 								<img src="img/basic_network.png">
 								<figcaption>Basic network where node color and size is based on degree. Larger node size indicate a higher degree.</figcaption>
 							</figure>
+							<p> In the project we use six different categories to characterize each character. The categories comprise the following; the four housings, muggles and other wizards, where the latter is a rather large group of characters. Formally this feature is called a the node attribute and by having this type of categorization of the nodes in the network it is possible to conduct community analysis which will be shown later. For now, let's just visualize the network structure as above but using a color scheme based on the categories of each node.</p>
 							<figure>
 								<img src="img/categorized_network.png">
 								<figcaption>The network colored by category/node attribute with size based on degree.</figcaption>
 							</figure>
+							<p> Continuing inline with the thought process of doing community analysis; it is possible to extract the largest fully connected subcomponent of the network and then plotting this in a community structure as seen below. Here with split the categories evenly on a circle and as is seen the group of 'Other wizards' are quite large as mentioned. The largest fully connected component of the network is termed the giant connected component (gcc) in network theory and by having extracted this the foundation of community analysis have been made. The community analysis will hence be performed on this subgraph in later sections. </p>
 							<figure>
 								<img src="img/grouped_network.png">
 								<figcaption>The giant component of the network (largest fully connected subset of the network) grouped by category</figcaption>
@@ -74,7 +76,7 @@
 							
 							<h2>Basic Statistics</h2>
 
-							<p>The network consists of 1078 nodes, i.e. characters and include 5211 edges, i.e. connections. As seen from the pictures above we categorize each character into different categories which are; Gyffindors, Ravenclaws, Slytherins, Hufflepuffs, Muggles and Other Wizards,
+							<p>Now, investigating the basic statistics of the network to get and idea of the structure. The network consists of 1078 nodes, i.e. characters and include 5211 edges, i.e. connections. As seen from the pictures above we categorize each character into different categories which are; Gyffindors, Ravenclaws, Slytherins, Hufflepuffs, Muggles and Other Wizards,
 							where the latter is a fairly large group of characters. These "communities" are what we will refer to as node attributes and further analysis of these communities will be carried out later.
 							A fast an easy to calculate statistic is the degree distribution, which is basically found by counting the number of connections each node in the network has and then binning the degrees such that a distribution can be visualized.</p>
 
@@ -98,8 +100,11 @@
 							<figure><img src="img/in_out_degree.png", alt="In- and out-degree of the the network plotted on linear and log-log axes"></figure>
 							
 							<h2>Centrality</h2>
+							<p> Centrality of nodes is a measure of how central a node is in a network. Different measures of centrality exists but here we just present two different measures; betweenness and eigenvector centrality. In layman terms the betweenness centrality is a measure of the fraction of how many of the shortest paths through the network that passes through that specific node. The shortest path between two nodes are simply defined as the path that would take you from node a to b in the shortest amount of steps. Hence a high betweenness centrality of a node usually means that the node is well connected as will be seen when computing the centrality measures. Eigenvector centrality is based on a different idea as a high node degree does not necessarily mean that the node has a high eigenvector centrality. The scoring of eigenvector centrality is basically controlled having node neighbors that also have a high eigenvector centrality and hence if one node has many links to important nodes in the network, then that node has a high eigenvector centrality.</p> 
 							
-							
+							<p> Now, computing the two centrality measures as seen in the below tables, it is seen that there is quite some correspondance between the two tables although the relative scoring between the two is different. It is quite clear that Harry Potter is the most important character in the network, which was expected as both the degree is high and intuitively one would know that he connects and interacts with a lot of different people in the network. From the betweenness centrality it is seen that some of the nodes with a high score here is not present in the top 10 eigenvector centrality table indicating that these were not connected to important characters in the network but were merely good links for shortest paths in the network. Generally it seems that the main characters of the books and movies have a high eigenvector centrality but this is not necessarily true for the betweenness centrality.</p>
+							<figure><img src="img/betweenness.PNG" alt="Top 10 nodes sorted by betweenness centrality"></figure>
+							<figure><img src="img/eigenvector_centrality.PNG" alt="Top 10 nodes sorted by eigenvector centrality"></figure>
 
 						</section>
 						<section id="text">
