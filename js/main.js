@@ -46,10 +46,10 @@ $(document).ready(function() {
 	// bxslider
 
 	$('.slider').bxSlider({
-		mode: 'fade',
-		captions: true,
+		// mode: 'fade',
+		captions: true
 		// slideWidth: 600
-		slideHeight: 200
+		// slideHeight: 500
 	});
 
 });
