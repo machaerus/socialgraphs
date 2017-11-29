@@ -52,4 +52,15 @@ $(document).ready(function() {
 		// slideHeight: 500
 	});
 
+	// slick
+
+	$('.top-carousel').slick({
+		// setting-name: setting-value
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		arrows: false,
+
+	});
+
 });
