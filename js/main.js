@@ -4,6 +4,8 @@ $(document).ready(function() {
 		top: 20
 	});
 
+	// SCROLLING
+	
 	// Select all links with hashes
 	$('a[href*="#"]')
 		// Remove links that don't actually link to anything

@@ -176,6 +176,10 @@ exit@~0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
 
+fancybox@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/fancybox/-/fancybox-3.0.0.tgz#8c21af8142c621bed7d551ba69c4c38eaecd2e04"
+
 faye-websocket@~0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.10.0.tgz#4e492f8d04dfb6f89003507f6edbf2d501e7c6f4"
@@ -416,6 +420,16 @@ is-utf8@^0.2.0:
 isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
+
+jquery-smooth-scroll@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jquery-smooth-scroll/-/jquery-smooth-scroll-2.2.0.tgz#87dc1add84168b7f466b3cdaeeb81c803fd22a2a"
+  dependencies:
+    jquery ">=1.7.0"
+
+jquery@>=1.7.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
 js-yaml@~3.5.2:
   version "3.5.5"
