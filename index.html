@@ -169,7 +169,7 @@
 
 							<h3>Analyzing the top nine characters Wikipedia page </h3>
 
-							<p>We extract the nine most important characters based on their total node degree corresponding. These were shown in the above table of total node degree. By tokenizing and cleaning the text from the characters Wikipedia site the following WordClouds are obtained.</p>
+							<p>We extract the nine most important characters based on their total node degree corresponding. These were shown in the above table of total node degree. By tokenizing and cleaning the text from the characters Wikipedia site to create a clean corpus of texts, then the TF-IDF calculation is carried out and the following WordClouds are obtained.</p>
 
 							<div class="slider" id="slider-characters">
 								<div><img src="img/Albus Dumbledore_wordcloud.png" title="Albus Dumbledore"></div>
@@ -182,10 +182,10 @@
 								<div><img src="img/Sirius Black_wordcloud.png" title="Sirius Black"></div>
 								<div><img src="img/Tom Riddle_wordcloud.png" title="Tom Riddle"></div>
 							</div>
+							<p>It is clear that the text was not cleaned completely as the WordClouds consists of non-meaningful words as a consequence of HTML and LaTeX commands which was not completely removed. Although this is the case, the wordclouds still bring some meaningful information and a person with domain knowledge of the Harry Potter universe would easily identify with the scoring of the words for the individual characters. It is fascinating and enlightning how a simple procedure of counting occurences of words across a corpus of documents and then applying a mathematical scoring scheme appropriately enables one to do an analysis of such a large amount of text that actually makes sense and that even might point out the unique themes in each book.</p>
+							<h3>Analyzing the eigth movie scripts</h3>
 
-							<h3>Movies</h3>
-
-							<p>Something</p>
+							<p>Now the same procedure is used just this time analyzing the movie scripts. The goal of this analysis is to compare the WordClouds of the movie scripts to the ones created from the books in the next subsection. Hence we concatenate the two movie scripts of the 7'th and 8'th movie into one long document and then calculate a combined WordCloud for these two scripts and compare them to the 7'th book.</p>
 
 							<div class="slider" id="slider-movies">
 								<div><img src="img/Movie1_wordcloud.png" title="Harry Potter and the Philosopher's Stone"></div>
@@ -199,7 +199,7 @@
 
 							<h3>Books</h3>
 
-							<p>Something</p>
+							<p>Now calculating the WordClouds for the books as seen below.</p>
 
 							<div class="slider" id="slider-books">
 								<div><img src="img/Book1_wordcloud.png" title="Harry Potter and the Philosopher's Stone"></div>
@@ -211,6 +211,9 @@
 								<div><img src="img/Book7_wordcloud.png" title="Harry Potter and the Deathly Hallows"></div>
 							</div>
 
+							<h3>Comparing the WordClouds</h3>
+
+							<p>From the above it is quite clear that the movie scripts are not as cleaned as the text of the books and because of this some non-meaningful words are included in the WordClouds. But by ignoring these it is still clear that the WordClouds of the books compare well to those of the movies, albeit the fact that for the movie scripts it seems that there is more emphasis on the unique persons included in each movie and for the books the WordClouds are focused on the events which describe that book. Hence, this analysis shows that what uniquely identifies the movies are approximately the same as for the books hereby concluding that the overall structure and themes of the movies follow that of the books.</p>
 
 							
 
