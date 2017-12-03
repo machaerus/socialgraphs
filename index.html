@@ -77,11 +77,23 @@
 												<li><a href="#characters">Characters</a></li>
 												<li><a href="#movies">Movies</a></li>
 												<li><a href="#books">Books</a></li>
+												<li><a href="#wordclouds">Comparison</a></li>
+											</ul>
+										</li>
+										<li><a href="#spells">Spells analysis</a></li>
+										<li><a href="#text-analysis">Text analysis</a>
+											<ul>
+												<li><a href="#dispersion-plots">Dispersion plots</a></li>
 											</ul>
 										</li>
 									</ul>
 								</li>
-								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#sentiment-analysis">Sentiment analysis</a></li>
+								<li class="nav-item"><i class="fa fa-bolt"></i><a href="#sentiment-analysis">Sentiment analysis</a>
+									<ul>
+										<li><a href="#single-word">Single-word sentiment</a></li>
+										<li><a href="#sentiment-plot">Sentiment plot</a></li>
+										<li><a href="#sentiment-comparison">Books &amp; movies</a></li>
+								</li>
 								<!-- <li><i class="fa-li fa fa-bolt"></i></li> -->
 							</ul>
 						</nav>
@@ -104,7 +116,7 @@
 						</section>
 						<section>
 							
-							<h1 id="network">Network Analysis</h1>
+							<h1 id="network-analysis">Network Analysis</h1>
 
 							<p>The downloaded network can be visualized in different ways like seen below. First a visualization where node size and color is based on the degree. The larger the degree of a node the darker the color and the larger the size.</p>
 							<figure>
@@ -223,9 +235,9 @@
 								<div><img src="img/Tom Riddle_wordcloud.png" title="Tom Riddle"></div>
 							</div>
 							<p>It is clear that the text was not cleaned completely as the WordClouds consists of non-meaningful words as a consequence of HTML and LaTeX commands which was not completely removed. Although this is the case, the wordclouds still bring some meaningful information and a person with domain knowledge of the Harry Potter universe would easily identify with the scoring of the words for the individual characters. It is fascinating and enlightning how a simple procedure of counting occurences of words across a corpus of documents and then applying a mathematical scoring scheme appropriately enables one to do an analysis of such a large amount of text that actually makes sense and that even might point out the unique identifiers for each character.</p>
-							<h3>Analyzing the eigth movie scripts</h3>
 
 							<h3 id="movies">TF-IDF analysis of the movies</h3>
+
 							<p>Now the same procedure is used just this time analyzing the movie scripts. The goal of this analysis is to compare the WordClouds of the movie scripts to the ones created from the books in the next subsection. Hence we concatenate the two movie scripts of the 7'th and 8'th movie into one long document and then calculate a combined WordCloud for these two scripts and compare them to the 7'th book.</p>
 
 
@@ -253,11 +265,11 @@
 								<div><img src="img/Book7_wordcloud.png" title="Harry Potter and the Deathly Hallows"></div>
 							</div>
 
-							<h3>Comparing the WordClouds</h3>
+							<h3 id="wordclouds">Comparing the WordClouds</h3>
 
 							<p>From the above it is quite clear that the movie scripts are not as cleaned as the text of the books and because of this some non-meaningful words are included in the WordClouds. But by ignoring these it is still clear that the WordClouds of the books compare well to those of the movies, albeit the fact that for the movie scripts it seems that there is more emphasis on the unique persons included in each movie and for the books the WordClouds are focused on the events which describe that book. Hence, this analysis shows that what uniquely identifies the movies are approximately the same as for the books hereby concluding that the overall structure and themes of the movies follow that of the books.</p>
 
-							<h2>Using NLTK to investigate spells </h2>
+							<h2 id="spells">Using NLTK to investigate spells </h2>
 							<p>We downloaded a list of spells from this <a href="https://www.pojo.com/harry-potter-spell-list/">website</a> with the goal of investigating the development of spell usage throughout the series of books and movies. Furthermore, we will be able to answer exciting question like;  which are the most used spells in each book? How does this compare to the movies? Are all spells in the list used in the book or are most of them made up by movie directors and script writers?</p>
 
 							<p>As a first try we investigate how many times each spell in the list is used throughout the whole series of books and in this way we create a top 10 of the spells used. This list of top 10 spells by usage is seen in the table below. </p>
@@ -279,7 +291,7 @@
 							
 							<p>It is clear that the death spell Avada Kedavra is used most frequently towards the end of the series and tops in the 7'th book and 7 and 8'th movie. Interestingly it is already mentioned in the fourth book but in the movies it was first used in the fifth movie. If one was to rate the spells with regards to sentiment, an interesting analysis could potentially be conducted and the result would probably be that towards the end of the books the usage of spells with low sentiment increases and from this conclude that the Harry Potter books and movies becomes darker with time! For now we just conclude that the unforgiveable spells are used with high frequency towards the end of the series clearly showing how the dark powers become more prominent towards the end of the series.</p>
 							
-							<h2>Text Analysis</h2>
+							<h2 id="text-analysis">Text Analysis</h2>
 							<p>Now, we want to investigate the relashionship between the three main characters Harry, Ron and Hermione and see if we could have predicted whether Harry or Ron would be Hermione's boyfriend. For non Harry Potter fans we can reveal that Ron and Hermione end up as a couple. For that reason, we created a list of lists where each sublist contains the trigrams, a continuous sequence of three words which are next to each other, for each book respectively and then, we counted the occurences of the following trigrams; "Harry and Hermione", "Harry and Ron" and "Ron and Hermione". Finally, we plotted our results.</p>
 
 							<p><figure>
@@ -295,7 +307,7 @@
 							</figure></p>
 							<p>From the above it is quite clear that Quidditch is very popular throughout the whole series but seem to drop a lot towards the end and especially in the last book. Remembering that in the last book Hogwarts is under attack by Voldemort and his army this might be expected that a fun activity like Quidditch is less prominent. Furthermore, courses like 'Potions' and 'Defence against the Dark Arts' become more prominent towards the end of the series and from this we conclude that these courses are more advanced courses which are taken by the older students and hence become popular with the aging of Harry Potter and his friends.</p> 
 						        
-							<h3>Dispersion Plots</h3>
+							<h3 id="dispersion-plots">Dispersion Plots</h3>
 							<p><figure>
 								<img src="img/char_book.png">
 								<figcaption>Dispersion plot of the main characters for the Harry Potter Books.</figcaption>
@@ -325,7 +337,7 @@
 							<h1 id="sentiment-analysis">Sentiment analysis</h1>
 							<P>Sentiment analysis is the analysis of subjective information and uses natural language processing and text mining to quantify meanings of different pieces of texts or words in such a way that it is possible to tell the feelings behind the words or sentences. The analysis in this section is based on a large dictionary with words and their respective sentiment scoring which was created by the authors behind the article <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0026752">Temporal Patterns of Happiness and Information in a Global Social Network: Hedonometrics and Twitter</a>. </p>
 
-							<h2>Single word sentiment analysis</h2>
+							<h2 id="single-word">Single word sentiment analysis</h2>
 							<p>The goal of this analysis is to provide a characterization of each word used as either; bad, neutral or good by defining thresholds for different sentiment levels and from this obtaining a binned word count for each class throughout each book. In this way we will be able to tell if the usage of words change throughout the series of books and if the books indeed become darker with time as one might think from the analysis of the spells as was seen above. By normalizing the counts of each class in each of the books such that we obtain a percentage of bad, neutral and good words, the bar plot below is obtained. </p>
 							<figure>
 								<img src="img/word_classification.png">
@@ -334,7 +346,7 @@
 							<p>From the above figure it is quite clear that mostly 'Good words' are used in the books followed by 'Bad words' and then few neutral words. The low occurences of 'Neutral words' is a consequence of the thresholds which cause the range of sentiment for the 'Neutral words' to be very small. The definition of thresholds can is further explained in the IPython notebook.</p> 
 							<p> Albeit not huge, it is seen that there is a general decrease of 'Good words' throughout the series of books and a general increase of 'Bad words'. The increase is low but relevant. One would expect the increase to be larger but as a consequence of the length of the books this is not seen. As suggested in the analysis of the spells, it would be interestingly to compute sentiment scores for the spells used and then see the development of sentiment only based on the spell usage. This would however require a scoring of all spells used which we chose not to do in this Final Project. </p>
  
-							<h2>Plot the sentiment</h2>
+							<h2 id="sentiment-plot">Plot the sentiment</h2>
 							
 							<p>In this section some sentiment plots for the Harry Potter books were created. It is quite clear from the plots below, that fluctuations in the average sentiment exist albeit the fluctuations are not large when comparing to the range on the y-axis. Furthermore, it is not possible to directly identify the events of the books corresponding to the changes in the sentiment profiles except if one was to find and analyze the specific region of interest. As this is a tedious process we move on.</p>
 							<div class="slider" id="slider-books">
@@ -348,7 +360,7 @@
 							</div>
 							
 							
-							<h2> Comparing books and movies with sentiment analysis </h2>
+							<h2 id="sentiment-comparison"> Comparing books and movies with sentiment analysis </h2>
 							
 
 					                <p>The last part of our sentiment analysis is the creation of some color plots based on the calculated sentiments in order to investigate how sentiments are dispersed in each movie comparing to the corresponding book.</p>
